@@ -37,11 +37,26 @@ const schedule = [
 ];
 
 function scheduleTable() {
-  const rows = schedule
-    .map(([day, time, name, link]) => {
-      const label = link ? `<a href="${link}">${name}</a>` : name;
-      return `<tr><td>${day}</td><td><time>${time}</time></td><td>${label}</td></tr>`;
-    })
+  const groups = [];
+  for (const row of schedule) {
+    const last = groups[groups.length - 1];
+    if (!last || last.day !== row[0]) groups.push({ day: row[0], rows: [row] });
+    else last.rows.push(row);
+  }
+  const rows = groups
+    .map((group) =>
+      group.rows
+        .map((row, i) => {
+          const [, time, name, link] = row;
+          const label = link ? `<a href="${link}">${name}</a>` : name;
+          const first = i === 0;
+          const dayCell = first
+            ? `<td rowspan="${group.rows.length}">${group.day}</td>`
+            : '';
+          return `<tr${first ? ' class="group-start"' : ''}>${dayCell}<td><time>${time}</time></td><td>${label}</td></tr>`;
+        })
+        .join('\n            ')
+    )
     .join('\n            ');
   return `<div class="table-scroll">
       <table class="schedule">

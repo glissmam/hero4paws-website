@@ -80,6 +80,15 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+a,
+button,
+.btn,
+.nav-toggle {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 body {
@@ -500,8 +509,10 @@ section {
   }
 
   .nav {
-    position: fixed;
-    inset: 62px 0 auto 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     flex-direction: column;
     align-items: stretch;
     gap: 0.15rem;
@@ -510,7 +521,7 @@ section {
     padding: 1rem 1.25rem 1.5rem;
     box-shadow: var(--shadow);
     display: none;
-    max-height: calc(100vh - 62px);
+    max-height: calc(100dvh - 70px);
     overflow: auto;
   }
 
@@ -988,14 +999,81 @@ table.schedule thead th {
   white-space: nowrap;
 }
 
-table.schedule tbody tr:nth-child(even) {
-  background: rgba(233, 237, 219, 0.4);
-}
-
 table.schedule td time {
   font-weight: 800;
   color: var(--olive-dark);
   white-space: nowrap;
+}
+
+table.schedule tbody .group-start td {
+  border-top: 2px solid var(--olive-100);
+}
+
+table.schedule tbody tr:first-child td {
+  border-top: none;
+}
+
+table.schedule tbody td[rowspan] {
+  font-weight: 800;
+  color: var(--olive-dark);
+  background: rgba(233, 237, 219, 0.45);
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  table.schedule {
+    min-width: 0;
+    font-size: 0.98rem;
+  }
+
+  table.schedule thead {
+    display: none;
+  }
+
+  table.schedule,
+  table.schedule tbody,
+  table.schedule tr,
+  table.schedule td {
+    display: block;
+    width: auto;
+  }
+
+  table.schedule tr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 0.7rem;
+    align-items: baseline;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  table.schedule tr.group-start {
+    border-top: 2px solid var(--olive-100);
+  }
+
+  table.schedule tr:last-child {
+    border-bottom: none;
+  }
+
+  table.schedule td {
+    border: none;
+    padding: 0;
+  }
+
+  table.schedule td[rowspan] {
+    grid-column: 1 / -1;
+    justify-self: start;
+    display: inline-block;
+    background: var(--olive);
+    color: #fffdf2;
+    border-radius: 999px;
+    padding: 0.1rem 0.7rem;
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.35rem;
+  }
 }
 
 .tag {
@@ -1524,6 +1602,12 @@ textarea:focus {
   fill: currentColor;
 }
 
+body.lightbox-open .whatsapp-float {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
 @media print {
   .site-header,
   .whatsapp-float,
@@ -1540,5 +1624,117 @@ textarea:focus {
 
   html {
     scroll-behavior: auto;
+  }
+}
+
+/* ---------- Feinschliff für kleine Bildschirme ---------- */
+
+@media (max-width: 560px) {
+  .wrap,
+  .wrap-narrow {
+    width: min(var(--wrap), 100% - 2rem);
+  }
+
+  .whatsapp-float {
+    padding: 0.85rem;
+    width: 54px;
+    height: 54px;
+    justify-content: center;
+    gap: 0;
+    font-size: 0;
+  }
+
+  .whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .gallery {
+    gap: 0.55rem;
+  }
+
+  .gallery a {
+    border-width: 3px;
+  }
+
+  .img-frame {
+    border-width: 6px;
+  }
+
+  .chip-nav a {
+    padding: 0.55rem 1rem;
+  }
+
+  .chip-nav {
+    gap: 0.45rem;
+  }
+
+  .section-head {
+    margin-bottom: 1.4rem;
+  }
+
+  .cta-band {
+    border-radius: var(--radius);
+  }
+
+  .lightbox {
+    padding: 3.5rem 0.6rem 2.5rem;
+  }
+
+  .lightbox img {
+    max-height: 72vh;
+    border-width: 4px;
+  }
+
+  .lightbox .lb-prev {
+    left: 0.5rem;
+  }
+
+  .lightbox .lb-next {
+    right: 0.5rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+  }
+
+  .eyebrow {
+    font-size: 1.35rem;
+  }
+
+  .btn-row {
+    gap: 0.6rem;
+  }
+
+  .btn-row .btn {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .hero-media .hero-sticker {
+    width: 7rem;
+    height: 7rem;
+    font-size: 1.02rem;
+    padding: 0.7rem;
+  }
+
+  .course {
+    border-radius: var(--radius);
+  }
+
+  .card-pad,
+  .icon-card,
+  .info-box {
+    padding: 1.15rem;
   }
 }

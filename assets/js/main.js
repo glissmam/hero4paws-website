@@ -30,10 +30,30 @@ document.querySelectorAll('.has-drop > .nav-link').forEach((trigger) => {
     if (window.innerWidth <= 1180) {
       e.preventDefault();
       const parent = trigger.parentElement;
-      parent.classList.toggle('open');
+      const wasOpen = parent.classList.contains('open');
+      document
+        .querySelectorAll('.has-drop.open')
+        .forEach((d) => d.classList.remove('open'));
+      if (!wasOpen) parent.classList.add('open');
     }
   });
 });
+
+// ---------- Mobilmenü schließen bei Tipp außerhalb ----------
+if (navToggle && nav) {
+  document.addEventListener('click', (e) => {
+    if (window.innerWidth > 1180) return;
+    if (!nav.classList.contains('open')) return;
+    const header = document.querySelector('.site-header');
+    if (!header.contains(e.target)) {
+      nav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document
+        .querySelectorAll('.has-drop.open')
+        .forEach((d) => d.classList.remove('open'));
+    }
+  });
+}
 
 // ---------- Galerie-Lightbox ----------
 (function () {
@@ -73,11 +93,13 @@ document.querySelectorAll('.has-drop > .nav-link').forEach((trigger) => {
   function open(i) {
     show(i);
     box.classList.add('open');
+    document.body.classList.add('lightbox-open');
     document.body.style.overflow = 'hidden';
   }
 
   function close() {
     box.classList.remove('open');
+    document.body.classList.remove('lightbox-open');
     document.body.style.overflow = '';
   }
 
