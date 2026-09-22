@@ -6,6 +6,8 @@ import {ImageIcon} from '@sanity/icons/Image'
 import {StarIcon} from '@sanity/icons/Star'
 import {TagIcon} from '@sanity/icons/Tag'
 import {UserIcon} from '@sanity/icons/User'
+import {PlayIcon} from '@sanity/icons/Play'
+import {DeployTool} from './tools/DeployTool'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
@@ -70,6 +72,17 @@ export default defineConfig({
           ]),
     }),
     visionTool(),
+    {
+      name: 'deploy-tool',
+      tools: [
+        {
+          name: 'deploy-website',
+          title: 'Website veroeffentlichen',
+          icon: PlayIcon,
+          component: DeployTool,
+        },
+      ],
+    },
   ],
 
   schema: {
