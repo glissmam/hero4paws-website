@@ -404,7 +404,12 @@ const anchor = (slug: string) => href(`kurse#${slug}`)
                 </ul>
               )}
               {img(event.image) && (
-                <img class="card-img" src={img(event.image, 700)} alt={event.image?.alt || ''} loading="lazy" />
+                <img
+                  class="card-img card-img--contain"
+                  src={img(event.image, 700)}
+                  alt={event.image?.alt || ''}
+                  loading="lazy"
+                />
               )}
             </article>
           ))}

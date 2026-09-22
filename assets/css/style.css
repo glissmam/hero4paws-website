@@ -1757,3 +1757,10 @@ body.lightbox-open .whatsapp-float {
     padding: 1.15rem;
   }
 }
+
+.card-img--contain {
+  object-fit: contain;
+  background: var(--color-cream-dark);
+  padding: 0.75rem;
+}
+

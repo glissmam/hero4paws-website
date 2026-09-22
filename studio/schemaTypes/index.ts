@@ -1,7 +1,7 @@
 import {linkType} from './shared'
 import {course, courseGroup, priceItem, scheduleEntry} from './kurse'
 import {event, galleryImage, siteSettings, testimonial} from './site'
-import {aboutPage, contactPage, customPage, eventsPage, hairPage, homePage} from './pages'
+import {aboutPage, contactPage, customPage, eventsPage, galeriePage, hairPage, homePage, kursePage} from './pages'
 import {blockTypes} from './blocks'
 import {pageBuilder} from './pageBuilder'
 
@@ -15,6 +15,8 @@ export const schemaTypes = [
   eventsPage,
   hairPage,
   contactPage,
+  kursePage,
+  galeriePage,
   customPage,
   courseGroup,
   course,
@@ -32,4 +34,6 @@ export const singletonTypes = new Set([
   'eventsPage',
   'hairPage',
   'contactPage',
+  'kursePage',
+  'galeriePage',
 ])

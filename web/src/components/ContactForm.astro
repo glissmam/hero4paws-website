@@ -1,0 +1,51 @@
+---
+const {settings} = Astro.props
+---
+<section class="bg-cream-2" id="anfrage">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <p class="eyebrow">Anfrage</p>
+        <h2>Schreib uns</h2>
+        <p>Erzähl uns kurz von dir und deinem Hund - wir melden uns mit einer Einschätzung und freien Terminen. Am schnellsten geht es per WhatsApp.</p>
+        <ul class="paw-list">
+          <li><strong>Telefon:</strong> {settings?.phone}</li>
+          <li><strong>WhatsApp:</strong> {settings?.whatsapp}</li>
+          <li><strong>E-Mail:</strong> {settings?.email}</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card card-pad">
+          <form data-mailform={settings?.email} data-subject="Anfrage über die Website" class="form-grid">
+            <div>
+              <label for="k-vorname">Vorname *</label>
+              <input id="k-vorname" name="Vorname" required />
+            </div>
+            <div>
+              <label for="k-nachname">Nachname *</label>
+              <input id="k-nachname" name="Nachname" required />
+            </div>
+            <div>
+              <label for="k-mail">E-Mail *</label>
+              <input id="k-mail" name="E-Mail" type="email" required />
+            </div>
+            <div>
+              <label for="k-tel">Telefon</label>
+              <input id="k-tel" name="Telefon" type="tel" />
+            </div>
+            <div class="full">
+              <label for="k-msg">Nachricht</label>
+              <textarea id="k-msg" name="Nachricht" rows="5" placeholder="Erzähl uns kurz von dir und deinem Hund..."></textarea>
+            </div>
+            <div class="full">
+              <button class="btn btn-primary" type="submit">Anfrage per E-Mail senden</button>
+              <p class="small muted" style="margin:.6rem 0 0">
+                Das Formular öffnet dein E-Mail-Programm mit den ausgefüllten Angaben. Deine Daten werden dabei nicht auf der Website gespeichert.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

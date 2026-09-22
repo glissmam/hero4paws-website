@@ -1,0 +1,23 @@
+---
+import Base from './Base.astro'
+import PageHead from '../components/PageHead.astro'
+import BlockRenderer from '../components/BlockRenderer.astro'
+import {sanityClient} from 'sanity:client'
+
+const {pageId, active} = Astro.props
+const [page, settings] = await Promise.all([
+  sanityClient.fetch('*[_id == $id][0]', {id: pageId}),
+  sanityClient.fetch('*[_id == "siteSettings"][0]'),
+])
+const sections = (page?.sections || []).filter(Boolean)
+---
+<Base
+  title={page?.seoTitle || `${page?.title} - Hero4Paws`}
+  description={page?.seoDescription}
+  active={active}
+  settings={settings}
+>
+  <PageHead title={page?.title} eyebrow={page?.eyebrow} lead={page?.lead} />
+  {sections.map((block: any) => <BlockRenderer block={block} settings={settings} />)}
+  <slot />
+</Base>

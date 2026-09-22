@@ -1,0 +1,11 @@
+---
+import CmsPage from '../layouts/CmsPage.astro'
+import ContactForm from '../components/ContactForm.astro'
+import {sanityClient} from 'sanity:client'
+
+const settings = await sanityClient.fetch('*[_id == "siteSettings"][0]')
+---
+
+<CmsPage pageId="contactPage" active="kontakt">
+  <ContactForm settings={settings} />
+</CmsPage>

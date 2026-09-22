@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro'
+import {sanityClient} from 'sanity:client'
+import impressum from '../data/legal/impressum.html?raw'
+import datenschutz from '../data/legal/datenschutz.html?raw'
+import agb from '../data/legal/agb.html?raw'
+
+export function getStaticPaths() {
+  const pages = {
+    impressum: {
+      title: 'Impressum',
+      description:
+        'Impressum der Hundeschule Hero4Paws, Katja Heldt-Lewerentz, Am Sonnebrink 7, 49086 Osnabrück.',
+      html: impressum,
+    },
+    datenschutz: {
+      title: 'Datenschutzerklärung',
+      description:
+        'Datenschutzerklärung der Hundeschule Hero4Paws: keine Cookies, kein Tracking, keine externen Dienste.',
+      html: datenschutz,
+    },
+    agb: {
+      title: 'Allgemeine Geschäftsbedingungen',
+      description: 'Allgemeine Geschäftsbedingungen der Hundeschule Hero4Paws in Osnabrück.',
+      html: agb,
+    },
+  }
+  return Object.entries(pages).map(([slug, page]) => ({params: {legal: slug}, props: {page}}))
+}
+
+const {page} = Astro.props
+const settings = await sanityClient.fetch('*[_id == "siteSettings"][0]')
+---
+<Base title={`${page.title} - Hero4Paws`} description={page.description} active="" settings={settings}>
+  <section class="page-head">
+    <div class="wrap">
+      <h1>{page.title}</h1>
+    </div>
+  </section>
+  <section>
+    <div class="wrap-narrow">
+      <div set:html={page.html} />
+    </div>
+  </section>
+</Base>

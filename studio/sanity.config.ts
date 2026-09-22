@@ -46,6 +46,14 @@ export default defineConfig({
               .icon(DocumentIcon)
               .child(S.document().schemaType('hairPage').documentId('hairPage')),
             S.listItem()
+              .title('Kurse & Preise')
+              .icon(DocumentIcon)
+              .child(S.document().schemaType('kursePage').documentId('kursePage')),
+            S.listItem()
+              .title('Galerie & Presse')
+              .icon(DocumentIcon)
+              .child(S.document().schemaType('galeriePage').documentId('galeriePage')),
+            S.listItem()
               .title('Kontakt & Anfahrt')
               .icon(DocumentIcon)
               .child(S.document().schemaType('contactPage').documentId('contactPage')),

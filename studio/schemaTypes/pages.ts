@@ -39,6 +39,8 @@ export const aboutPage = singletonPage('aboutPage', 'Über uns')
 export const eventsPage = singletonPage('eventsPage', 'Events & Specials')
 export const hairPage = singletonPage('hairPage', 'Hero4Hair')
 export const contactPage = singletonPage('contactPage', 'Kontakt & Anfahrt')
+export const kursePage = singletonPage('kursePage', 'Kurse & Preise')
+export const galeriePage = singletonPage('galeriePage', 'Galerie & Presse')
 
 export const customPage = defineType({
   name: 'customPage',
