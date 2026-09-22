@@ -1,0 +1,4 @@
+node_modules
+.build
+.sanity/runtime
+*.log
