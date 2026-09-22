@@ -1,0 +1,2 @@
+minimumReleaseAgeExclude:
+  - '@sanity/blueprints@0.27.0'
