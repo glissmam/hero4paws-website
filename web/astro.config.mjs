@@ -6,7 +6,7 @@ const dataset = process.env.PUBLIC_SANITY_DATASET || 'production'
 
 export default defineConfig({
   site: 'https://glissmam.github.io',
-  base: '/hero4paws-website',
+  base: '/hero4paws-website/',
   integrations: [
     sanity({
       projectId,
