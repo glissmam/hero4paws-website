@@ -5,8 +5,6 @@ on:
     branches: [main]
   repository_dispatch:
     types: [sanity-content]
-  schedule:
-    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:
