@@ -3,6 +3,8 @@ name: Website bauen und veroeffentlichen
 on:
   push:
     branches: [main]
+  repository_dispatch:
+    types: [sanity-content]
   workflow_dispatch:
 
 permissions:
