@@ -23,13 +23,14 @@
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
+    "@sanity/blueprints": "0.27.0",
     "@sanity/eslint-config-studio": "^7",
+    "@sanity/functions": "1.8.0",
+    "@types/node": "^26.6.2",
     "@types/react": "^19.2.14",
     "eslint": "^10.8.1",
     "prettier": "^3.5",
-    "typescript": "^5.8",
-    "@sanity/blueprints": "0.27.0",
-    "@sanity/functions": "1.8.0"
+    "typescript": "^5.8"
   },
   "prettier": {
     "bracketSpacing": false,

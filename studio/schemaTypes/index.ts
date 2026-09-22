@@ -3,10 +3,12 @@ import {course, courseGroup, priceItem, scheduleEntry} from './kurse'
 import {event, galleryImage, siteSettings, testimonial} from './site'
 import {aboutPage, contactPage, customPage, eventsPage, galeriePage, hairPage, homePage, kursePage} from './pages'
 import {blockTypes} from './blocks'
+import {deployRequest} from './deploy'
 import {pageBuilder} from './pageBuilder'
 
 export const schemaTypes = [
   linkType,
+  deployRequest,
   pageBuilder,
   ...blockTypes,
   siteSettings,

@@ -2,6 +2,9 @@ import {defineBlueprint, defineDocumentFunction} from '@sanity/blueprints'
 
 export default defineBlueprint({
   resources: [
-    // defineDocumentFunction({name: 'my-function', event: {on: ['create', 'update']}}),
+    defineDocumentFunction({
+      name: 'rebuild-website',
+      event: {on: ['create'], filter: "_type == 'deployRequest'"},
+    }),
   ],
 })
