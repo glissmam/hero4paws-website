@@ -481,6 +481,15 @@ section {
   z-index: 60;
 }
 
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -0.45rem;
+  left: 0;
+  right: 0;
+  height: 0.45rem;
+}
+
 .dropdown.cols-2 {
   min-width: 480px;
   display: none;

@@ -137,7 +137,13 @@ export const priceItem = defineType({
       by: [{field: 'position', direction: 'asc'}],
     },
   ],
-  preview: {select: {title: 'title', subtitle: 'labels'}},
+  preview: {
+    select: {title: 'title', labels: 'labels'},
+    prepare: ({title, labels}) => ({
+      title,
+      subtitle: Array.isArray(labels) ? labels.join(' · ') : labels,
+    }),
+  },
 })
 
 export const scheduleEntry = defineType({
