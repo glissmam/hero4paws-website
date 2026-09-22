@@ -462,6 +462,11 @@ const anchor = (slug: string) => href(`kurse#${slug}`)
             <div class="quote-card">
               <blockquote>„{quote.quote}“</blockquote>
               <p class="who">{quote.name}</p>
+              {quote.date && (
+                <p class="small muted" style="margin:0">
+                  {new Date(quote.date).toLocaleDateString('de-DE')}
+                </p>
+              )}
             </div>
           ))}
         </div>
