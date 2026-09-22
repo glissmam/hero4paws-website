@@ -1,0 +1,547 @@
+---
+import {sanityClient} from 'sanity:client'
+import {href, img, imgSrcSet} from '../lib/sanity'
+import {PortableText} from 'astro-portabletext'
+
+const {block, settings} = Astro.props
+const tone = block.tone || 'default'
+const toneClass = `tone-${tone}`
+const btnClass = (isSecondary: boolean) =>
+  tone === 'olive' || tone === 'dark'
+    ? isSecondary
+      ? 'btn btn-outline tone-invert'
+      : 'btn btn-light'
+    : isSecondary
+      ? 'btn btn-outline'
+      : 'btn btn-primary'
+
+let data: any = null
+if (block._type === 'courseHighlights') {
+  data = await sanityClient.fetch(
+    `*[_type == "course" && _id in $ids] | order(position asc){_id, title, teaser, tags, "slug": slug.current, image, "group": group->{title}}`,
+    {ids: (block.courses || []).map((c: any) => c._ref)}
+  )
+} else if (block._type === 'courseGroupSection') {
+  data = await sanityClient.fetch(
+    `*[_type == "course" && group._ref == $ref] | order(position asc){_id, title, teaser, tags, facts, "slug": slug.current, image, intro, prices[]->{title, labels, note}}`,
+    {ref: block.group?._ref}
+  )
+} else if (block._type === 'priceList') {
+  data = await sanityClient.fetch(
+    `*[_type == "priceItem" && category == $cat] | order(position asc){title, labels, note}`,
+    {cat: block.category || 'kurse'}
+  )
+} else if (block._type === 'schedule') {
+  data = await sanityClient.fetch(
+    `*[_type == "scheduleEntry"] | order(_createdAt asc){day, time, title, "course": course->{title, "slug": slug.current}}`
+  )
+} else if (block._type === 'eventList') {
+  const ids = (block.events || []).map((e: any) => e._ref)
+  data = ids.length
+    ? await sanityClient.fetch(`*[_type == "event" && _id in $ids] | order(position asc){...}`, {ids})
+    : await sanityClient.fetch(`*[_type == "event"] | order(position asc){...}`)
+} else if (block._type === 'galleryGrid') {
+  data = await sanityClient.fetch(
+    `*[_type == "galleryImage" && category == $cat] | order(position asc)[0...$limit]{image, caption}`,
+    {cat: block.category || 'training', limit: block.limit || 8}
+  )
+} else if (block._type === 'testimonials') {
+  data = await sanityClient.fetch(
+    `*[_type == "testimonial"] | order(position asc)[0...$limit]{name, quote, date}`,
+    {limit: block.limit || 4}
+  )
+}
+
+const days = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag']
+const scheduleGroups =
+  block._type === 'schedule'
+    ? (data || []).reduce((acc: any[], entry: any) => {
+        const last = acc[acc.length - 1]
+        if (!last || last.day !== entry.day) acc.push({day: entry.day, rows: [entry]})
+        else last.rows.push(entry)
+        return acc
+      }, [])
+    : []
+const anchor = (slug: string) => href(`kurse#${slug}`)
+---
+
+{
+  block._type === 'hero' && (
+    <section class={`hero ${toneClass}`}>
+      <div class="wrap hero-grid">
+        <div>
+          {block.badge && <p class="hero-badge">{block.badge}</p>}
+          <h1>
+            {block.headline}
+            {block.headlineAccent && (
+              <>
+                {' '}
+                <span class="script" style="color:var(--color-accent)">
+                  {block.headlineAccent}
+                </span>
+              </>
+            )}
+          </h1>
+          {block.lead && <p class="hero-claim">{block.lead}</p>}
+          {(block.primary?.label || block.secondary?.label) && (
+            <div class="btn-row" style="margin-top:1.6rem">
+              {block.primary?.label && (
+                <a class={btnClass(false)} href={href(block.primary.href)}>
+                  {block.primary.label}
+                </a>
+              )}
+              {block.secondary?.label && (
+                <a class={btnClass(true)} href={href(block.secondary.href)}>
+                  {block.secondary.label}
+                </a>
+              )}
+            </div>
+          )}
+          {block.facts?.length > 0 && (
+            <ul class="hero-facts">
+              {block.facts.map((fact: string) => (
+                <li>
+                  <svg viewBox="0 0 512 512" aria-hidden="true">
+                    <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                  </svg>
+                  {fact}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+        <div class="hero-media">
+          {img(block.image) && (
+            <img class="photo-main" src={img(block.image)} srcset={imgSrcSet(block.image)} sizes="(max-width: 900px) 88vw, 40vw" alt={block.image?.alt || ''} width="1400" height="1050" />
+          )}
+          {img(block.imageSecondary) && (
+            <img class="photo-small" src={img(block.imageSecondary, 900)} alt={block.imageSecondary?.alt || ''} />
+          )}
+          {block.sticker && <span class="hero-sticker" aria-hidden="true">{block.sticker}</span>}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'featureGrid' && (
+    <section class={toneClass}>
+      <div class="wrap">
+        <div class={`section-head ${block.columns === 2 ? '' : 'center'}`}>
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+          {block.lead && <p class="lead">{block.lead}</p>}
+        </div>
+        <div class={`grid grid-${block.columns || 3}`}>
+          {(block.items || []).map((item: any) => (
+            <div class="icon-card">
+              <div class="icon-bubble" aria-hidden="true">
+                <svg viewBox="0 0 100 100">
+                  <circle cx="17" cy="38" r="10" />
+                  <circle cx="38" cy="22" r="11" />
+                  <circle cx="63" cy="22" r="11" />
+                  <circle cx="84" cy="38" r="9" />
+                  <path d="M50 42c15 0 27 12 27 26 0 11-8 19-19 19-4 0-6-1-8-3-2 2-4 3-8 3-11 0-19-8-19-19 0-14 12-26 27-26z" />
+                </svg>
+              </div>
+              <h3>{item.title}</h3>
+              <p class="muted" style="margin:0">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'textImage' && (
+    <section id={block.eyebrow?.toLowerCase().includes('anlage') ? 'anlage' : undefined} class={toneClass}>
+      <div class={`wrap split ${block.layout === 'imageLeft' ? 'reverse' : ''}`}>
+        <div>
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+          {block.body && (
+            <div class="rich-text">
+              <PortableText value={block.body} />
+            </div>
+          )}
+          {block.items?.length > 0 && (
+            <ul class="paw-list">
+              {block.items.map((item: string) => (
+                <li set:html={item} />
+              ))}
+            </ul>
+          )}
+          {block.primary?.label && (
+            <div class="btn-row">
+              <a class={btnClass(false)} href={href(block.primary.href)}>
+                {block.primary.label}
+              </a>
+              {block.secondary?.label && (
+                <a class={btnClass(true)} href={href(block.secondary.href)}>
+                  {block.secondary.label}
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+        <div class={block.imageSecondary ? 'img-stack' : ''}>
+          {img(block.image) && (
+            <img
+              class="img-frame"
+              src={img(block.image)}
+              srcset={imgSrcSet(block.image)}
+              sizes="(max-width: 860px) 92vw, 46vw"
+              alt={block.image?.alt || ''}
+              loading="lazy"
+            />
+          )}
+          {img(block.imageSecondary) && (
+            <img class="img-frame small" src={img(block.imageSecondary, 700)} alt={block.imageSecondary?.alt || ''} loading="lazy" />
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'courseHighlights' && (
+    <section class={toneClass}>
+      <div class="wrap">
+        <div class="section-head">
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+          {block.lead && <p class="lead">{block.lead}</p>}
+        </div>
+        <div class="grid grid-3">
+          {(data || []).map((course: any) => (
+            <a class="card card-link" href={anchor(course.slug)}>
+              {img(course.image) && <img class="card-img" src={img(course.image, 700)} alt={course.image?.alt || ''} loading="lazy" />}
+              <div class="card-pad">
+                <p class="card-meta">{course.group?.title || course.tags?.[0]}</p>
+                <h3>{course.title}</h3>
+                <p class="muted">{course.teaser}</p>
+                <span class="arrow">Mehr erfahren →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+        {block.primary?.label && (
+          <div class="btn-row" style="margin-top:2rem;justify-content:center">
+            <a class={btnClass(false)} href={href(block.primary.href)}>
+              {block.primary.label}
+            </a>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'courseGroupSection' && (
+    <section id={block.group?.slug?.current || undefined} class={toneClass}>
+      <div class="wrap">
+        <div class="section-head">
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+          {block.lead && <p class="lead">{block.lead}</p>}
+        </div>
+        {(data || []).map((course: any) => (
+          <article class="course" id={course.slug}>
+            {img(course.image) && <img src={img(course.image, 700)} alt={course.image?.alt || ''} loading="lazy" />}
+            <div>
+              <h3>
+                {course.title}
+                {(course.tags || []).map((tag: string) => (
+                  <span class="tag olive">{tag}</span>
+                ))}
+              </h3>
+              {(course.intro || []).map((paragraph: any) => (
+                <p>
+                  <PortableText value={[paragraph]} />
+                </p>
+              ))}
+              {course.facts?.length > 0 && (
+                <div class="facts">
+                  {course.facts.map((fact: string) => (
+                    <span class="price-tag" style="border-style:solid">
+                      {fact}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {course.prices?.length > 0 && (
+                <p style="margin:.9rem 0 0">
+                  {course.prices.map((price: any) =>
+                    (price.labels || []).map((label: string) => <span class="price-tag">{label}</span>)
+                  )}
+                </p>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'priceList' && (
+    <section id="preise" class={toneClass}>
+      <div class="wrap">
+        <div class="section-head">
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+          {block.lead && <p class="lead">{block.lead}</p>}
+        </div>
+        <div class="grid grid-3">
+          {(data || []).map((price: any) => (
+            <div class="card card-pad">
+              <h3>{price.title}</h3>
+              {(price.labels || []).map((label: string) => (
+                <p>
+                  <span class="price-tag">{label}</span>
+                </p>
+              ))}
+              {price.note && (
+                <p class="muted" style="margin:0">
+                  {price.note}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+        {settings?.taxNote && (
+          <p class="small muted" style="margin-top:1.2rem">
+            {settings.taxNote}
+          </p>
+        )}
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'schedule' && (
+    <section id="wochenplan" class={toneClass}>
+      <div class="wrap">
+        <div class="section-head">
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+          {block.lead && <p class="lead">{block.lead}</p>}
+        </div>
+        <div class="table-scroll">
+          <table class="schedule">
+            <thead>
+              <tr>
+                <th>Tag</th>
+                <th>Uhrzeit</th>
+                <th>Kurs</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scheduleGroups.map((group: any) =>
+                group.rows.map((row: any, i: number) => (
+                  <tr class={i === 0 ? 'group-start' : ''}>
+                    {i === 0 && <td rowspan={group.rows.length}>{group.day}</td>}
+                    <td>
+                      <time>{row.time}</time>
+                    </td>
+                    <td>
+                      {row.course?.slug ? (
+                        <a href={anchor(row.course.slug)}>{row.title}</a>
+                      ) : (
+                        row.title
+                      )}
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+        {block.note && (
+          <div class="note" style="margin-top:1.4rem">
+            <strong>Gut zu wissen:</strong> {block.note}
+          </div>
+        )}
+        {block.showDownload && (
+          <div class="btn-row" style="margin-top:1.4rem">
+            <a class="btn btn-outline" href={`${import.meta.env.BASE_URL}assets/img/kursplan.png`} download>
+              Kursplan als Bild herunterladen
+            </a>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'eventList' && (
+    <section id="krimiwanderung" class={toneClass}>
+      <div class="wrap">
+        <div class="section-head">
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+          {block.lead && <p class="lead">{block.lead}</p>}
+        </div>
+        <div class="grid grid-2">
+          {(data || []).map((event: any) => (
+            <article class="card card-pad" id={event.slug?.current}>
+              <p class="card-meta">{event.eyebrow}</p>
+              <h3>{event.title}</h3>
+              {event.lead && <p class="muted">{event.lead}</p>}
+              {event.facts?.length > 0 && (
+                <ul class="paw-list">
+                  {event.facts.map((fact: string) => (
+                    <li>{fact}</li>
+                  ))}
+                </ul>
+              )}
+              {img(event.image) && (
+                <img class="card-img" src={img(event.image, 700)} alt={event.image?.alt || ''} loading="lazy" />
+              )}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'galleryGrid' && (
+    <section class={toneClass}>
+      <div class="wrap">
+        <div class="section-head center">
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+          {block.lead && <p class="lead">{block.lead}</p>}
+        </div>
+        <div class="gallery">
+          {(data || []).map((item: any) =>
+            img(item.image) ? (
+              <a href={img(item.image, 1600)} data-lightbox data-full={img(item.image, 1600)}>
+                <img src={img(item.image, 600)} alt={item.image?.alt || ''} loading="lazy" />
+              </a>
+            ) : null
+          )}
+        </div>
+        {block.primary?.label && (
+          <div class="btn-row" style="margin-top:2rem;justify-content:center">
+            <a class={btnClass(false)} href={href(block.primary.href)}>
+              {block.primary.label}
+            </a>
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'testimonials' && (
+    <section class={toneClass}>
+      <div class="wrap">
+        <div class="section-head center">
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+        </div>
+        <div class="grid grid-2">
+          {(data || []).map((quote: any) => (
+            <div class="quote-card">
+              <blockquote>„{quote.quote}“</blockquote>
+              <p class="who">{quote.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'factRow' && (
+    <section class={toneClass}>
+      <div class="wrap">
+        {block.headline && <h2>{block.headline}</h2>}
+        <div class="fact-row">
+          {(block.items || []).map((item: any) => (
+            <div class="fact">
+              <strong>{item.value}</strong>
+              <span class="muted">{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'faq' && (
+    <section class={toneClass}>
+      <div class="wrap">
+        <div class="section-head center">
+          {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+          {block.headline && <h2>{block.headline}</h2>}
+          {block.lead && <p class="lead">{block.lead}</p>}
+        </div>
+        <div class="grid grid-2">
+          {(block.items || []).map((item: any) => (
+            <div class="card card-pad">
+              <h3>{item.question}</h3>
+              <p class="muted" style="margin:0">
+                {item.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'ctaBand' && (
+    <section>
+      <div class="wrap">
+        <div class={`cta-band ${tone === 'cream' ? 'tone-cream' : ''}`}>
+          <div>
+            {block.eyebrow && <p class="eyebrow">{block.eyebrow}</p>}
+            <h2>{block.headline}</h2>
+            {block.text && <p style="margin:0">{block.text}</p>}
+          </div>
+          <div class="btn-row">
+            {block.primary?.label && (
+              <a class="btn btn-light" href={href(block.primary.href)}>
+                {block.primary.label}
+              </a>
+            )}
+            {block.secondary?.label && (
+              <a class="btn btn-outline tone-invert" href={href(block.secondary.href)}>
+                {block.secondary.label}
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+{
+  block._type === 'richTextSection' && (
+    <section class={toneClass}>
+      <div class={block.width === 'narrow' ? 'wrap-narrow' : 'wrap'}>
+        {block.headline && <h2>{block.headline}</h2>}
+        {block.body && <PortableText value={block.body} />}
+      </div>
+    </section>
+  )
+}

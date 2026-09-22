@@ -57,6 +57,19 @@ const image = (file, alt) => ({
 
 const docs = []
 const push = (doc) => docs.push(doc)
+
+const fixIds = (value) => {
+  if (Array.isArray(value)) return value.map(fixIds)
+  if (value && typeof value === 'object') {
+    const out = {}
+    for (const [k, v] of Object.entries(value)) {
+      out[k] = k === '_id' || k === '_ref' ? String(v).replace(/\./g, '-') : fixIds(v)
+    }
+    return out
+  }
+  return value
+}
+
 const slugId = (prefix, slug) => `${prefix}.${slug}`
 
 const courseSlug = (id) => id
@@ -628,7 +641,8 @@ push({
   ],
 })
 
-fs.writeFileSync(OUT, docs.map((d) => JSON.stringify(d)).join('\n') + '\n', 'utf8')
-console.log('Dokumente:', docs.length)
-console.log('Typen:', Object.entries(docs.reduce((acc, d) => ((acc[d._type] = (acc[d._type] || 0) + 1), acc), {})).map(([k, v]) => `${k}:${v}`).join(', '))
+const fixed = docs.map(fixIds)
+fs.writeFileSync(OUT, fixed.map((d) => JSON.stringify(d)).join('\n') + '\n', 'utf8')
+console.log('Dokumente:', fixed.length)
+console.log('Typen:', Object.entries(fixed.reduce((acc, d) => ((acc[d._type] = (acc[d._type] || 0) + 1), acc), {})).map(([k, v]) => `${k}:${v}`).join(', '))
 console.log('Datei:', OUT)

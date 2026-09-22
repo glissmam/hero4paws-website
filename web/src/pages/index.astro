@@ -1,0 +1,22 @@
+---
+import {sanityClient} from 'sanity:client'
+import Base from '../layouts/Base.astro'
+import BlockRenderer from '../components/BlockRenderer.astro'
+
+const [page, settings] = await Promise.all([
+  sanityClient.fetch(`*[_id == "homePage"][0]{title, seoTitle, seoDescription, sections[]}`),
+  sanityClient.fetch(`*[_id == "siteSettings"][0]`),
+])
+---
+<Base
+  title={`${page?.seoTitle || 'Hero4Paws - Hundeschule in Osnabrück'}`}
+  description={page?.seoDescription || 'Hundeschule Hero4Paws in Osnabrück-Voxtrup: Kurse, Krimiwanderung mit Hund und Hundeführerschein auf über 8000 m².'}
+  active="start"
+  settings={settings}
+>
+  {
+    (page?.sections || []).map((block: any) => (
+      <BlockRenderer block={block} settings={settings} />
+    ))
+  }
+</Base>
