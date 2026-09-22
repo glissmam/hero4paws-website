@@ -1,0 +1,56 @@
+:root {
+  --color-cream: #faf6ea;
+  --color-cream-dark: #f4eeda;
+  --color-cream-deep: #ece4cc;
+  --color-surface: #fffdf7;
+  --color-olive: #5f6f3f;
+  --color-olive-dark: #47532e;
+  --color-olive-deep: #333d21;
+  --color-olive-soft: #8b9a68;
+  --color-olive-tint: #e9eddb;
+  --color-sage: #b7c39a;
+  --color-accent: #d97e5a;
+  --color-accent-dark: #c1653f;
+  --color-ink: #332f1d;
+  --color-ink-soft: #6b6349;
+  --color-line: rgba(85, 90, 55, 0.16);
+
+  --font-body: 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-script: 'Caveat', 'Segoe Script', cursive;
+
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 2px 8px rgba(64, 62, 40, 0.07);
+  --shadow-md: 0 14px 34px -14px rgba(58, 60, 35, 0.28);
+  --shadow-lg: 0 30px 60px -30px rgba(45, 50, 25, 0.4);
+
+  --layout-wrap: 1160px;
+  --layout-wrap-narrow: 760px;
+  --layout-gap: 1.4rem;
+
+  --space-1: 0.35rem;
+  --space-2: 0.7rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: clamp(3rem, 7vw, 5.5rem);
+
+  --tone-default-bg: var(--color-cream);
+  --tone-default-fg: var(--color-ink);
+  --tone-cream-bg: var(--color-cream-dark);
+  --tone-cream-fg: var(--color-ink);
+  --tone-olive-bg: var(--color-olive);
+  --tone-olive-fg: #f6f4e6;
+  --tone-olive-heading: #fffdf2;
+  --tone-olive-link: #f0e9c8;
+  --tone-dark-bg: var(--color-olive-deep);
+  --tone-dark-fg: #d9dcc4;
+  --tone-dark-heading: #fffdf2;
+  --tone-dark-link: #d9dcc4;
+
+  --focus-ring: 0 0 0 3px rgba(95, 111, 63, 0.3);
+}

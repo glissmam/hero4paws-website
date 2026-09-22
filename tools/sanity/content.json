@@ -1,0 +1,881 @@
+{
+  "courseGroups": [
+    {
+      "eyebrow": "Termine",
+      "title": "Kursübersicht ab 01.07.2026",
+      "lead": "Kurzfristige Änderungen sind möglich - frag im Zweifel einfach kurz per WhatsApp nach."
+    },
+    {
+      "eyebrow": "Preise",
+      "title": "Faire Preise, klare Ansagen",
+      "lead": "Als Kleinunternehmerin im Sinne von § 19 Abs. 1 UStG berechne ich keine Umsatzsteuer."
+    },
+    {
+      "eyebrow": "Gruppe 1",
+      "title": "Welpen & Junghunde",
+      "lead": "Die ersten Monate entscheiden: Wir begleiten euch vom ersten Kennenlernen bis durch die Pubertät."
+    },
+    {
+      "eyebrow": "Gruppe 2",
+      "title": "Kleine Helden & Freilauf",
+      "lead": "Groß und Klein getrennt - so fühlt sich jeder Hund sicher und kann unbeschwert toben."
+    }
+  ],
+  "courses": [
+    {
+      "id": "welpengruppe",
+      "title": "Welpengruppe",
+      "tags": [
+        "Sonntags & samstags"
+      ],
+      "intro": [
+        "In unserer Welpengruppe lernen die Hunde unter Anleitung die Grundlagen von Erziehung, Kommunikation und Sozialisation. Die Minis spielen mit Artgenossen unterschiedlicher Rassen, Größen und Charaktere und sammeln dabei positive Erfahrungen.",
+        "Die Welpengruppe ist eine kluge Investition in deinen Hund: Sie hilft ihm, ein ausgeglichener und sicherer Begleiter zu werden."
+      ],
+      "facts": [
+        "So 10:00 Welpen „Neu\"",
+        "So 11:00 Klasse 1",
+        "So 12:00 Klasse 2",
+        "Sa 14:00 Welpen „Mini\""
+      ],
+      "prices": [
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/galerie-53.jpg",
+      "alt": "Welpe wird auf dem Arm gehalten"
+    },
+    {
+      "id": "junghunde",
+      "title": "Junghunde",
+      "tags": [
+        "Pubertät"
+      ],
+      "intro": [
+        "Wenn Mutti und Vati schwierig werden, braucht das Pubertier jemanden, der vermittelt. Anders als leider oft üblich, treffen unsere jungen Wilden gesittet und in Ruhe aufeinander.",
+        "Das heißt nicht, dass sie nie im Freispiel miteinander agieren dürfen - sondern dass sie von Anfang an lernen, mit Geduld statt Hektik zum Ziel zu kommen."
+      ],
+      "facts": [
+        "Zeiten laut Wochenplan",
+        "Leinenführung & Rückruf",
+        "Impulskontrolle",
+        "Alltagssituationen üben"
+      ],
+      "prices": [
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/galerie-38.jpg",
+      "alt": "Junger Hund tobt über die Wiese"
+    },
+    {
+      "id": "hab8",
+      "title": "Hab8!",
+      "tags": [
+        "Ab ca. 1 Jahr",
+        "Samstags 15:30"
+      ],
+      "intro": [
+        "„Das hat er noch nie gemacht!\" - oder „eigentlich kann er das\"? Wir starten nochmal da, wo in der Pubertät plötzlich das Baustellenschild aufgestellt wurde.",
+        "Wir finden heraus, wo sich Probleme und Missverständnisse eingeschlichen haben - und lernen, wie wichtig unsere Körpersprache und Energie im Alltag mit unseren Hunden ist. Für jagende Jagdhunde, schützende Herdenschützer, hütende Hütehunde und alle anderen: Hund lernt nie aus."
+      ],
+      "facts": [
+        "Immer samstags 15:30 Uhr"
+      ],
+      "prices": [
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/galerie-41.jpg",
+      "alt": "Großer dunkler Hund an der Leine"
+    },
+    {
+      "id": "halb8",
+      "title": "Ha(l)b 8",
+      "tags": [
+        "Kleine Hunde",
+        "Freitags 18:00"
+      ],
+      "intro": [
+        "Der Erziehungskurs für Junghunde kleiner Hunde: Auch kleine Pubertiere brauchen jemanden, der mit ihnen durch diese Zeit geht.",
+        "Wenn es Halb8 ist, solltet ihr schnell diesen Kurs besuchen :-)"
+      ],
+      "facts": [
+        "Freitags 18:00 Uhr"
+      ],
+      "prices": [
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/kleine-helden-07.jpg",
+      "alt": "Kleine Hunde beim Training"
+    },
+    {
+      "id": "kleine-helden",
+      "title": "Kleine Helden",
+      "tags": [
+        "Bis 40 cm Schulterhöhe"
+      ],
+      "intro": [
+        "Bei den „Kleinen Helden\" können Hunde mit einer Schulterhöhe von bis zu 40 cm teilnehmen. Neben Spielen und Toben bleibt stets Zeit für eine kleine Trainingseinheit."
+      ],
+      "facts": [
+        "Spielen & Toben mit passenden Partnern",
+        "Kurze Trainingseinheiten",
+        "Eigene Freilauf-Gruppen bis 40 cm"
+      ],
+      "prices": [
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/kleine-helden-02.jpg",
+      "alt": "Kleine Hunde toben auf der Wiese"
+    },
+    {
+      "id": "freilauf",
+      "title": "Freilauf",
+      "tags": [
+        "Freies Toben"
+      ],
+      "intro": [
+        "Beim Freilauf dürfen die Hunde einfach mal Hund sein: rennen, spielen, schnüffeln. Wir achten darauf, dass die Gruppen zusammenpassen - Groß und Klein kommen nicht durcheinander.",
+        "Du bist unsicher, ob Freilauf für deinen Hund passt? Sprich uns an, wir schauen gemeinsam."
+      ],
+      "facts": [
+        "Fr 15:00 Freilauf bis 40 cm",
+        "So 10:00 Freilauf bis 40 cm",
+        "So 13:15 Freilauf mit Wiesenpass"
+      ],
+      "prices": [
+        "5,00 € pro Hund"
+      ],
+      "image": "assets/img/thumbs/galerie-11.jpg",
+      "alt": "Hunde toben ausgelassen im Schnee"
+    },
+    {
+      "id": "social-walk",
+      "title": "Social Walk",
+      "tags": [
+        "1. Sonntag im Monat, 14:00"
+      ],
+      "intro": [
+        "Geführte Spaziergänge, bei denen ihr lernt, entspannt in der Gruppe unterwegs zu sein: ruhiges Tempo, klare Regeln, viel Abstand.",
+        "Ideal für Hunde, die bei Begegnungen noch unsicher oder aufgeregt sind - und für Menschen, die einfach gemeinsam mit Gleichgesinnten unterwegs sein wollen."
+      ],
+      "facts": [
+        "Ruhiges Tempo",
+        "Begegnungen üben",
+        "Ohne Leinenziehen"
+      ],
+      "prices": [
+        "10,00 € pro Familie/Hund"
+      ],
+      "image": "assets/img/thumbs/social-walk-01.jpg",
+      "alt": "Gruppe läuft mit Hunden spazieren"
+    },
+    {
+      "id": "hoopers",
+      "title": "Hoopers",
+      "tags": [
+        "Für Jederhund",
+        "Donnerstags 15:00"
+      ],
+      "intro": [
+        "Hoopers ist eine Hundesportart, bei der ihr einen Hindernisparcours aus Hoops, Tunneln, Tonnen und Gates fehlerfrei bewältigt. Eine reibungslose Zusammenarbeit und Geschicklichkeit im Team sind die Grundlagen.",
+        "Geeignet für Jedermann und „Jederhund\" - Alter, Rasse und Größe spielen kaum eine Rolle. Auch für Hunde, die nicht (mehr) springen dürfen, und für Hundeführer, die nicht mehr ganz so gut zu Fuß sind."
+      ],
+      "facts": [
+        "Donnerstags 15:00 Uhr",
+        "Kein Springen nötig"
+      ],
+      "prices": [
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/anlage-05.jpg",
+      "alt": "Trainingsgelände mit Geräten"
+    },
+    {
+      "id": "longieren",
+      "title": "Longieren",
+      "tags": [
+        "Bindung",
+        "Freitags 18:00"
+      ],
+      "intro": [
+        "Beim Longieren läuft der Hund auf einem Kreis um dich herum - gelenkt mit Körpersprache, Stimme und Signalen. Das Ziel: Bindung stärken, Aufmerksamkeit und Gehorsam fördern, Hund körperlich und geistig auslasten.",
+        "Ursprünglich aus dem Pferdesport, heute eine abwechslungsreiche Beschäftigung für fast alle Hunde - unabhängig von Alter, Rasse oder Größe."
+      ],
+      "facts": [
+        "Freitags 18:00 Uhr",
+        "Körpersprache schulen"
+      ],
+      "prices": [
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/longieren-01.jpg",
+      "alt": "Hund läuft im Kreis um die Hundeführerin"
+    },
+    {
+      "id": "agility",
+      "title": "Agility",
+      "tags": [
+        "Tempo & Teamwork",
+        "Di & Fr 16:30"
+      ],
+      "intro": [
+        "Gemeinsam einen Hindernisparcours aus Hürden, Tunnel, Slalom und Co. meistern - mit Tempo, Präzision und jeder Menge Teamwork.",
+        "Die Geräte werden Schritt für Schritt und altersgerecht aufgebaut, damit dein Hund sicher und motiviert läuft. Anfänger starten in einer eigenen Gruppe, Vorkenntnisse brauchst du keine."
+      ],
+      "facts": [
+        "Dienstags & freitags 16:30 Uhr",
+        "Anfänger willkommen"
+      ],
+      "prices": [
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/galerie-21.jpg",
+      "alt": "Hund springt im Schnee"
+    },
+    {
+      "id": "degility",
+      "title": "Degility®",
+      "tags": [
+        "Ohne Wettkampf",
+        "Di, Fr & Sa"
+      ],
+      "intro": [
+        "Degility kombiniert Elemente aus Agility, Obedience und Geschicklichkeit - ohne Schnelligkeit oder Wettkampf. Im Vordergrund stehen Spaß und Teamwork zwischen Hund und Mensch.",
+        "Geeignet für Hunde aller Rassen, Größen und Altersklassen, auch für Hunde mit Handicap oder gesundheitlichen Einschränkungen. <strong>Neu:</strong> Für Einsteiger gibt es den Rookie-Kurs samstags um 10:00 Uhr - mindestens 3 Besuche, danach gibt es die Freigabe für die Parcours-Kurse. Geschirr und Halsband sind Pflicht."
+      ],
+      "facts": [
+        "Rookie-Kurs Sa 10:00",
+        "Degility® Sa 11:00 & Di 18:00 / Fr 15:00",
+        "Profi Sa 15:30"
+      ],
+      "prices": [
+        "Rookie-Kurs 50,00 € einmalig",
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/degility-01.jpg",
+      "alt": "Hund balanciert über einen Degility-Parcours"
+    },
+    {
+      "id": "rally-obedience",
+      "title": "Rally-Obedience",
+      "tags": [
+        "Präzision",
+        "Dienstags 16:30"
+      ],
+      "intro": [
+        "Der Hundeführer durchläuft mit seinem Hund einen vorgegebenen Parcours, der möglichst präzise abzuarbeiten ist. An jeder Station steht ein Schild, das zeigt, was zu tun ist und wohin es weitergeht.",
+        "Das Besondere: Hund und Mensch dürfen und müssen ständig miteinander kommunizieren - der Hund darf jederzeit angesprochen, motiviert und gelobt werden. Klassische Übungen wie Sitz, Platz und Steh treffen auf Richtungswechsel, Slalom und Abrufübungen."
+      ],
+      "facts": [
+        "Dienstags 16:30 Uhr"
+      ],
+      "prices": [
+        "15,00 € pro Stunde"
+      ],
+      "image": "assets/img/thumbs/galerie-36.jpg",
+      "alt": "Hund wird im Schnee geführt"
+    },
+    {
+      "id": "einzelstunde",
+      "title": "Einzelstunde",
+      "tags": [
+        "Mittwochs nach Absprache"
+      ],
+      "intro": [
+        "Probleme zu Hause, beim Spaziergang - oder wo es sonst hakt? Wir besprechen, was wir in den nächsten Wochen gemeinsam erreichen wollen, und erarbeiten anhand eurer Angaben einen Trainingsplan als roten Faden.",
+        "So können wir immer wieder überprüfen, wo ihr steht und wo das Training intensiviert werden sollte. <a href=\"kontakt.html\">Termin anfragen</a> - Hausbesuche sind möglich."
+      ],
+      "facts": [],
+      "prices": [
+        "65,00 € auf dem Platz",
+        "75,00 € Hausbesuch in Osnabrück",
+        "außerhalb zzgl. km-Pauschale"
+      ],
+      "image": "assets/img/thumbs/galerie-45.jpg",
+      "alt": "Frauchen arbeitet mit ihrem Hund"
+    },
+    {
+      "id": "maulkorbtraining",
+      "title": "Maulkorbtraining & Beratung",
+      "tags": [
+        "Schritt für Schritt"
+      ],
+      "intro": [
+        "Ein Maulkorb ist kein Makel - er kann Sicherheit geben. Wir helfen, den richtigen Korb auszuwählen, ihn positiv zu verknüpfen und die Tragezeit langsam zu steigern.",
+        "Wir begleiten euch von der Anprobe über die Bestellung bis zum Tragen - denn der Hund soll sich wohlfühlen :-)"
+      ],
+      "facts": [
+        "Anprobe & Auswahl",
+        "Positiv aufbauen",
+        "Tragezeit steigern"
+      ],
+      "prices": [
+        "30,00 € für die Beratung"
+      ],
+      "image": "assets/img/thumbs/maulkorb-01.jpg",
+      "alt": "Hund mit Maulkorb"
+    },
+    {
+      "id": "hundefuehrerschein",
+      "title": "Hundeführerschein / Sachkunde",
+      "tags": [
+        "Niedersachsen",
+        "Termine nach Absprache"
+      ],
+      "intro": [
+        "Seit Juli 2013 müssen Hundebesitzer in Niedersachsen einen Sachkundenachweis erbringen - für alle Hunde, die nach dem 1. Juli 2011 angeschafft wurden, unabhängig von der Rasse. Die theoretische Prüfung ist vor der Anschaffung nötig, die praktische kannst du danach ablegen - oder ebenfalls vorher.",
+        "Wir bereiten dich in Theorie und Praxis vor: Der Vorbereitungskurs enthält die theoretischen Fragebögen und Training für die praktische Prüfung. Theorie in der Hundeschule, Praxis im Stadtbereich (ca. 60 Minuten)."
+      ],
+      "facts": [
+        "Theorie 70,00 €",
+        "Praxis 70,00 €",
+        "Vorbereitungskurs inklusive"
+      ],
+      "prices": [],
+      "image": "assets/img/thumbs/fuehrerschein-01.jpg",
+      "alt": "D.O.Q. Test 2.0 - Informationen zur Sachkundeprüfung"
+    }
+  ],
+  "prices": [
+    {
+      "title": "Kursstunden",
+      "labels": [
+        "15,00 € pro Stunde"
+      ],
+      "note": "Alle Gruppenkurse - eine Unterrichtseinheit dauert 60 Minuten."
+    },
+    {
+      "title": "Freilauf",
+      "labels": [
+        "5,00 € pro Hund"
+      ],
+      "note": "Freies Toben in passender Gruppe - Termine siehe Wochenplan."
+    },
+    {
+      "title": "Social Walk",
+      "labels": [
+        "10,00 € pro Familie/Hund"
+      ],
+      "note": "Geführter Spaziergang in der Gruppe."
+    },
+    {
+      "title": "Einzelstunde",
+      "labels": [
+        "65,00 € auf dem Platz",
+        "75,00 € Hausbesuch"
+      ],
+      "note": "Hausbesuche innerhalb von Osnabrück. Außerhalb zzgl. km-Pauschale. Termine mittwochs nach Absprache."
+    },
+    {
+      "title": "Maulkorbtraining & Beratung",
+      "labels": [
+        "30,00 €"
+      ],
+      "note": "Von der Anprobe über die Bestellung bis zum Tragen."
+    },
+    {
+      "title": "Degility Rookie-Kurs",
+      "labels": [
+        "50,00 € einmalig"
+      ],
+      "note": "Einführungskurs, mindestens 3 Besuche - danach geht es in die Parcours-Kurse."
+    },
+    {
+      "title": "Kids- & Teens-Paws-Club",
+      "labels": [
+        "15,00 € pro Woche"
+      ],
+      "note": "Donnerstags für Kinder und Teens von 6 bis 16 Jahren."
+    },
+    {
+      "title": "Krimiwanderung Soko Wuff",
+      "labels": [
+        "40,00 € pro Team"
+      ],
+      "note": "Jede weitere Begleitperson oder jeder weitere Hund 10,00 €. Auch als Geschenkgutschein."
+    },
+    {
+      "title": "Hundeführerschein",
+      "labels": [
+        "je 70,00 €"
+      ],
+      "note": "Theoretische und praktische Prüfung, Vorbereitungskurs inklusive Übungsbögen."
+    }
+  ],
+  "schedule": [
+    {
+      "day": "Dienstag",
+      "time": "15:00",
+      "title": "Club",
+      "anchor": ""
+    },
+    {
+      "day": "Dienstag",
+      "time": "16:30",
+      "title": "Rally Obedience",
+      "anchor": "#rally-obedience"
+    },
+    {
+      "day": "Dienstag",
+      "time": "16:30",
+      "title": "Agility",
+      "anchor": "#agility"
+    },
+    {
+      "day": "Dienstag",
+      "time": "18:00",
+      "title": "Degility®",
+      "anchor": "#degility"
+    },
+    {
+      "day": "Dienstag",
+      "time": "18:00",
+      "title": "Unterordnung",
+      "anchor": ""
+    },
+    {
+      "day": "Dienstag",
+      "time": "19:00",
+      "title": "Dog Dance",
+      "anchor": "events.html#dog-dance"
+    },
+    {
+      "day": "Donnerstag",
+      "time": "15:00",
+      "title": "Hoopers",
+      "anchor": "#hoopers"
+    },
+    {
+      "day": "Donnerstag",
+      "time": "15:00",
+      "title": "Kids-Paws-Club (6-10 Jahre)",
+      "anchor": "events.html#clubs"
+    },
+    {
+      "day": "Donnerstag",
+      "time": "17:30",
+      "title": "Obedience",
+      "anchor": ""
+    },
+    {
+      "day": "Donnerstag",
+      "time": "17:30",
+      "title": "Klasse 3",
+      "anchor": ""
+    },
+    {
+      "day": "Freitag",
+      "time": "15:00",
+      "title": "Degility®",
+      "anchor": "#degility"
+    },
+    {
+      "day": "Freitag",
+      "time": "15:00",
+      "title": "Freilauf bis 40 cm",
+      "anchor": "#freilauf"
+    },
+    {
+      "day": "Freitag",
+      "time": "16:30",
+      "title": "Police-Academy",
+      "anchor": ""
+    },
+    {
+      "day": "Freitag",
+      "time": "16:30",
+      "title": "Agility",
+      "anchor": "#agility"
+    },
+    {
+      "day": "Freitag",
+      "time": "18:00",
+      "title": "Ha(l)b8! Kleine Hunde",
+      "anchor": "#halb8"
+    },
+    {
+      "day": "Freitag",
+      "time": "18:00",
+      "title": "Longieren",
+      "anchor": "#longieren"
+    },
+    {
+      "day": "Samstag",
+      "time": "10:00",
+      "title": "Rookie Degility®",
+      "anchor": "#degility"
+    },
+    {
+      "day": "Samstag",
+      "time": "11:00",
+      "title": "Degility®",
+      "anchor": "#degility"
+    },
+    {
+      "day": "Samstag",
+      "time": "12:30",
+      "title": "Klasse 4",
+      "anchor": ""
+    },
+    {
+      "day": "Samstag",
+      "time": "14:00",
+      "title": "Welpen „Mini\"",
+      "anchor": "#welpengruppe"
+    },
+    {
+      "day": "Samstag",
+      "time": "15:30",
+      "title": "Degility® Profi",
+      "anchor": "#degility"
+    },
+    {
+      "day": "Samstag",
+      "time": "15:30",
+      "title": "Hab8!",
+      "anchor": "#hab8"
+    },
+    {
+      "day": "Sonntag",
+      "time": "10:00",
+      "title": "Freilauf bis 40 cm",
+      "anchor": "#freilauf"
+    },
+    {
+      "day": "Sonntag",
+      "time": "10:00",
+      "title": "Welpen Neu",
+      "anchor": "#welpengruppe"
+    },
+    {
+      "day": "Sonntag",
+      "time": "11:00",
+      "title": "Welpen Klasse 1",
+      "anchor": "#welpengruppe"
+    },
+    {
+      "day": "Sonntag",
+      "time": "12:00",
+      "title": "Welpen Klasse 2",
+      "anchor": "#welpengruppe"
+    },
+    {
+      "day": "Sonntag",
+      "time": "13:15",
+      "title": "Freilauf mit Wiesenpass",
+      "anchor": "#freilauf"
+    },
+    {
+      "day": "Sonntag",
+      "time": "13:15",
+      "title": "Offene Stunde (2. - 4. Sonntag)",
+      "anchor": ""
+    },
+    {
+      "day": "Sonntag",
+      "time": "14:00",
+      "title": "Social Walk (1. Sonntag)",
+      "anchor": "#social-walk"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "Claudia und Stephan Mollenschott",
+      "quote": "„Wir waren vor einem Jahr das erste Mal bei euch auf dem Platz - mit einem Hund, der uns an unsere Grenzen gebracht hat. Dank der tollen Unterstützung und dem individuellen Engagement von Katja hat Finja eine großartige Entwicklung gemacht. Auch wir haben enorm dazugelernt.“"
+    },
+    {
+      "name": "Dominik Lücke",
+      "quote": "„Wir sind mit unserem Horst immer sonntags in der Welpenstunde und super zufrieden. Es ist lustig, immer sehr informativ und macht sowohl dem Hund als auch mir Spaß.“"
+    },
+    {
+      "name": "ElaBela",
+      "quote": "„Ob Regen, Sonne, Matsch, Sturm, Hagel, Hitze oder Schnee - es ist immer ein Vergnügen bei euch, liebe Katja und lieber Thomas. Danke!“"
+    },
+    {
+      "name": "Tanja Zilke",
+      "quote": "„Vielen Dank für die lehrreichen und tollen Stunden, die wir mit dir verbringen durften. Wir haben schon viel gelernt und kommen immer wieder gerne zu neuen Aufgaben zurück.“"
+    }
+  ],
+  "home": {
+    "badge": "Hundeschule in Osnabrück-Voxtrup",
+    "headline": "Hier werden aus Pfoten",
+    "accent": "Helden",
+    "claim": "Vom Welpenkurs bis zur Krimiwanderung: Bei uns trainiert ihr in kleinen Gruppen, nach Größe getrennt und mit ganz viel Herz. Auf über 8000 m² eigener Anlage - mitten in der Natur zwischen Voxtrup und Bissendorf.",
+    "facts": [
+      "Zugelassen nach § 11 TierSchG",
+      "Über 8000 m² Trainingsgelände",
+      "Gruppen nach Größe getrennt",
+      "Alle Rassen willkommen"
+    ],
+    "sticker": "Alle Rassenwillkommen!",
+    "usps": [
+      {
+        "title": "Kleine Gruppen, faire Methoden",
+        "text": "Groß und Klein trainieren getrennt - so fühlt sich jeder Hund sicher. Wir arbeiten fair, klar und überwiegend persönlich: verstehen, was der Hund zeigt, und belohnen, was gelingt."
+      },
+      {
+        "title": "Eigene Anlage mit Wohlfühl-Faktor",
+        "text": "Gehege, große Trainingsflächen, überdachte Terrasse, WC, Parkplatz und Flutlicht für die Abendstunden - auf unserer Ranch ist Platz für 30 bis 40 Personen."
+      },
+      {
+        "title": "Für jeden Hund das passende Angebot",
+        "text": "Welpengruppe, Erziehungskurse, Hoopers, Degility, Rally-Obedience, Social Walks, Dog Dance, Clubs für Kinder und Teens - und mit Soko Wuff ein Krimiabenteuer für die ganze Familie."
+      }
+    ],
+    "quote": ""
+  },
+  "events": {
+    "krimi": {
+      "id": "krimiwanderung",
+      "eyebrow": "Soko Wuff ermittelt",
+      "headline": "Krimiwanderung mit Hund",
+      "lead": "",
+      "paragraphs": [
+        "Soko Wuff ermittelt",
+        "„Nichts ist trügerischer als eine offenkundige Tatsache!\" (Sherlock Holmes) - du wolltest schon immer gemeinsam mit deinem Hund einen mysteriösen Kriminalfall lösen? Unser Soko-Wuff-Team sucht immer neue Detektive mit Spürnasen, um den Täter zu überführen.",
+        "Wir sammeln gemeinsam Beweise, lösen Rätsel und befragen möglicherweise Zeugen. Gemeinsam erschnüffeln wir die richtige Fährte und überwinden kleine Hindernisse. Wenn es knifflig wird, stecken wir die Köpfe zusammen und geben nicht auf, bis wir den Täter gefunden haben."
+      ],
+      "lists": [
+        [
+          "Spaß am Schnüffeln und Freude am Spazieren",
+          "Sozialverträglich, arbeitet gerne mit Frauchen oder Herrchen",
+          "Mindestalter 9 Monate, Grundimmunisierung und Hundehaftpflichtversicherung"
+        ],
+        [
+          "Dauer ca. 2 bis 3 Stunden, Strecke zwischen 4 und 6 km",
+          "Maximal 10 Mensch-Hund-Teams pro Fall - Spaß für die ganze Familie",
+          "Die Themen wechseln und finden oft an mehreren Standorten statt",
+          "Löst ihr den Fall, werdet ihr am Ende dafür belohnt"
+        ]
+      ],
+      "price": "40,00 € pro Mensch-Hund-Team",
+      "priceNote": "Zusätzlicher Hund oder Begleitperson: je 10,00 € (bitte bei der Anmeldung angeben). Anmeldung über die Kontaktseite, per WhatsApp unter 01573 4 777 688 oder per E-Mail an hero4paws@gmx.de.",
+      "image": "assets/img/soko-wuff.jpg",
+      "imageAlt": "Soko Wuff - Logo mit Pfoten und Lupe",
+      "cards": []
+    },
+    "dogdance": {
+      "id": "dog-dance",
+      "eyebrow": "Neu bei Hero4Paws",
+      "headline": "Dog Dance",
+      "lead": "",
+      "paragraphs": [
+        "Neu bei Hero4Paws",
+        "Gemeinsam bewegen, Bindung stärken, Spaß und Teamwork: Beim Dog Dance entstehen kleine Choreografien aus Bewegung und Vertrauen - tanzen. Vertrauen. Ein Team. Ein Gefühl."
+      ],
+      "lists": [
+        [
+          "Immer dienstags um 19:00 Uhr",
+          "Für alle, die Freude an gemeinsamer Bewegung haben",
+          "Frag uns nach freien Plätzen"
+        ]
+      ],
+      "price": "",
+      "priceNote": "",
+      "image": "assets/img/poster-dog-dance.jpg",
+      "imageAlt": "Flyer Dog Dance: dienstags 19 Uhr",
+      "cards": []
+    },
+    "clubs": {
+      "id": "clubs",
+      "eyebrow": "Für Kids & Teens",
+      "headline": "Kids-Paws-Club & Teens-Paws-Club",
+      "lead": "Hunde verstehen, mit Hunden leben, mit Hunden trainieren - gemeinsam wachsen und stark fürs Leben werden.",
+      "paragraphs": [],
+      "lists": [],
+      "price": "",
+      "priceNote": "",
+      "image": "assets/img/poster-kids-club.jpg",
+      "imageAlt": "Flyer Kids-Paws-Club: donnerstags 15 bis 15:45 Uhr für Kinder von 6 bis 10 Jahren",
+      "cards": [
+        {
+          "meta": "Donnerstags 15:00 - 15:45 Uhr",
+          "title": "Kids-Paws-Club (6 - 10 Jahre)",
+          "text": "Hunde verstehen, mit Hunden leben, mit Hunden trainieren - spielerisch und altersgerecht.",
+          "price": "15,00 € pro Woche",
+          "image": "assets/img/poster-kids-club.jpg",
+          "imageAlt": "Flyer Kids-Paws-Club: donnerstags 15 bis 15:45 Uhr für Kinder von 6 bis 10 Jahren"
+        },
+        {
+          "meta": "Donnerstags 16:00 - 16:45 Uhr",
+          "title": "Teens-Paws-Club (11 - 16 Jahre)",
+          "text": "Gemeinsam wachsen, Vertrauen aufbauen, Verantwortung übernehmen - stark fürs Leben.",
+          "price": "15,00 € pro Woche",
+          "image": "assets/img/poster-teens-club.jpg",
+          "imageAlt": "Flyer Teens-Paws-Club: donnerstags 16 bis 16:45 Uhr für Kids und Teens von 11 bis 16 Jahren"
+        }
+      ]
+    },
+    "seminare": {
+      "id": "seminare",
+      "eyebrow": "Wissen teilen",
+      "headline": "Seminare & Workshops",
+      "lead": "",
+      "paragraphs": [
+        "Wissen teilen",
+        "Immer wieder gibt es bei uns Seminare und Workshops zu wechselnden Themen - vom gemeinsamen Trainingstag bis zu Spezialthemen rund um den Alltag mit Hund.",
+        "Auf unserer Ranch ist Platz für 30 bis 40 Personen, genug Raum für angenehme Theorie und Praxis. Die Termine geben wir kurzfristig über WhatsApp, E-Mail und Instagram bekannt."
+      ],
+      "lists": [],
+      "price": "",
+      "priceNote": "",
+      "image": "",
+      "imageAlt": "",
+      "cards": [
+        {
+          "meta": "",
+          "title": "Verbindliche Buchung",
+          "text": "Das Formular öffnet dein E-Mail-Programm mit den ausgefüllten Angaben - so landet die Anfrage direkt bei uns.",
+          "price": "",
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    },
+    "stammtisch": {
+      "id": "stammtisch",
+      "eyebrow": "Community",
+      "headline": "Stammtisch",
+      "lead": "",
+      "paragraphs": [
+        "Community",
+        "Jeden ersten Donnerstag im Monat treffen wir uns um 19:00 Uhr, um gemütlich beisammen zu sein, zu klönen - und vielleicht lecker zu essen. Der genaue Ort wird jeweils kurzfristig bekannt gegeben."
+      ],
+      "lists": [
+        [
+          "Jeden 1. Donnerstag im Monat, 19:00 Uhr",
+          "Offen für alle - mit oder ohne Hund",
+          "Fragen? Kurz per WhatsApp oder E-Mail melden"
+        ],
+        [
+          "Alle Trainingszeiten findest du im Wochenplan",
+          "Änderungen bei Wetter, Urlaub oder Krankheit geben wir kurzfristig bekannt",
+          "Rückfragen beantworten wir am schnellsten per WhatsApp"
+        ]
+      ],
+      "price": "",
+      "priceNote": "",
+      "image": "",
+      "imageAlt": "",
+      "cards": []
+    },
+    "gutscheine": {
+      "id": "gutscheine",
+      "eyebrow": "Verschenken",
+      "headline": "Gutscheine für Hundemenschen",
+      "lead": "Ob zum Geburtstag, zu Weihnachten oder als Dankeschön: Über einen gemeinsamen Termin mit dem eigenen Hund freut sich jeder.",
+      "paragraphs": [],
+      "lists": [],
+      "price": "",
+      "priceNote": "",
+      "image": "",
+      "imageAlt": "",
+      "cards": [
+        {
+          "meta": "",
+          "title": "Krimiwanderung",
+          "text": "Ein Fall für Soko Wuff - alle Krimiwanderungen gibt es als Geschenkgutschein.",
+          "price": "",
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "meta": "",
+          "title": "Kursstunden",
+          "text": "Fünf oder zehn Kursstunden zum Start in den Lieblingskurs.",
+          "price": "",
+          "image": "",
+          "imageAlt": ""
+        },
+        {
+          "meta": "",
+          "title": "Hero4Hair",
+          "text": "Eine Runde Fellpflege zum Verwöhnen - vom Bürsten bis zum Scheren.",
+          "price": "",
+          "image": "",
+          "imageAlt": ""
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "Über uns",
+    "lead": "Katja Heldt-Lewerentz, ihre Hunde und unser Gelände - die Menschen und der Ort hinter Hero4Paws.",
+    "intro": [
+      "Über mich",
+      "... das wäre ein Wunder! Aber manchmal wundert man sich.",
+      "Ich bin <strong>Katja Heldt-Lewerentz</strong>, Hundetrainerin mit Erlaubnis des Veterinäramts Osnabrück. Zu meiner Familie gehören Herdenschutzhündin Berta und Zwergpudel Henry - zwei sehr unterschiedliche Charaktere, die mich täglich daran erinnern, jeden Hund als Individuum zu sehen.",
+      "Als Halterin eines Herdenschutzhundes kenne ich auch die „oft stigmatisierten Rassen\" gut - und weiß, wie wichtig ein fairer, geduldiger Blick auf jedes Tier ist."
+    ],
+    "qualification": [
+      "Erlaubnis nach <strong>§ 11 Abs. 1 Nr. 8f TierSchG</strong> durch das Veterinäramt Osnabrück: Ausbildung von Hunden für Dritte und Anleitung der Ausbildung durch den Tierhalter",
+      "Ausbildung am Schulungszentrum für Hundetrainer <strong>Ziemer &amp; Falke</strong>",
+      "Erfahrung mit Herdenschutzhunden und großen wie kleinen Rassen"
+    ],
+    "approach": [
+      {
+        "title": "Fair, klar, persönlich",
+        "text": "Da unsere Hunde nicht unsere Sprache sprechen, kommunizieren wir in ihrer: Verstehe das Verhalten, halte den Hund fair, verstärke, was gelingt. So richtet sich der Blick auf das Ziel - nicht auf das Problem."
+      },
+      {
+        "title": "Training nach Größe getrennt",
+        "text": "Groß und Klein zusammen geht nicht immer gut. Deshalb gibt es bei uns Gruppen nach Größe - von den „Kleinen Helden\" bis zu den XXL-Rassen, alle sind willkommen."
+      },
+      {
+        "title": "Erst kennenlernen, dann trainieren",
+        "text": "Mit Hund an der Leine bleiben viele Fragen unausgesprochen. Deshalb nehmen wir uns zu Beginn Zeit, das Mensch-Hund-Team kennenzulernen - in Ruhe."
+      }
+    ],
+    "facility": [
+      "Die Anlage",
+      "An der Stadtgrenze von Osnabrück, zwischen Voxtrup und Bissendorf, liegt unser geschütztes Gelände auf über 8000 Quadratmetern. Im Frühjahr 2024 sind hier kleinere und größere Gehege entstanden - die Zäune und Tore hat uns der Zoo Osnabrück zur Verfügung gestellt.",
+      "Auf der „Ranch\" finden ca. 30 bis 40 Personen Platz: genug Raum für angenehme Seminare und theoretischen Unterricht. Die große überdachte Terrasse lädt besonders im Sommer zum Pausieren und Verweilen ein. Damen- und Herren-WC befinden sich ebenfalls auf dem Gelände.",
+      "Abgerundet wird alles durch einen geräumigen Parkplatz und eine Flutlichtanlage für die dunkle Jahreszeit und die Abendstunden.",
+      "Route planen"
+    ],
+    "facilityFacts": [
+      {
+        "value": "8.000+",
+        "label": "m² Gelände"
+      },
+      {
+        "value": "30-40",
+        "label": "Personen finden Platz"
+      },
+      {
+        "value": "Flutlicht",
+        "label": "für Abendstunden"
+      }
+    ]
+  },
+  "hair": {
+    "title": "Hero4Hair",
+    "lead": "Neu ab Februar 2026: Fellpflege bei Hero4Paws - vom Bürsten bis zum Scheren.",
+    "intro": [
+      "Fellpflege",
+      "Bürsten, Blowern, Schneiden und Scheren - bei Hero4Hair bekommt dein Hund die komplette Fellpflege. Die Termine vergeben wir individuell auf Anfrage."
+    ],
+    "prices": [
+      "Hunde bis 30 cm: 40,00 €",
+      "Hunde bis 45 cm: 60,00 €",
+      "Hunde bis 60 cm: 80,00 €",
+      "Hunde ab 60 cm: nach Absprache",
+      "Krallen kürzen: 10,00 €",
+      "Pfotenpflege: 15,00 €",
+      "Eingewöhnung für Welpen und Hunde ohne Erfahrung: 19,00 €"
+    ]
+  },
+  "contact": {
+    "title": "Kontakt & Anfahrt",
+    "lead": "Wir freuen uns über deine Nachricht - am schnellsten geht es per WhatsApp oder Telefon.",
+    "directions": [
+      "<strong>Adresse:</strong> Am Sonnebrink 7, 49086 Osnabrück",
+      "<strong>Parken:</strong> geräumiger Parkplatz direkt auf dem Gelände",
+      "<strong>Orientierung:</strong> Zufahrt über Voxtrup bzw. Bissendorf, ausgeschildertes Gelände",
+      "<strong>Wichtig:</strong> Bitte warte mit deinem Hund auf dem Parkplatz, bis du dran bist - so bleibt der Einlauf entspannt."
+    ],
+    "formNote": "Hinweis: Der Link öffnet Google Maps. Dabei werden Daten an Google übertragen - Details in unserer Datenschutzerklärung."
+  },
+  "legal": {
+    "taxNote": ""
+  }
+}
