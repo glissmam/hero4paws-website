@@ -14,7 +14,7 @@ const clean = (s) => (s || '').replace(/\s+/g, ' ').trim()
   const url = (f) => 'file:///' + path.join(ROOT, f).replace(/\\/g, '/')
   const data = {}
 
-  await page.goto(url('kurse.html'), {waitUntil: 'load'})
+  await page.goto(url('tools/sanity/legacy-html/kurse.html'), {waitUntil: 'load'})
   await page.waitForTimeout(500)
 
   data.courseGroups = await page.$$eval('section[id] .section-head', (heads) =>
@@ -69,7 +69,7 @@ const clean = (s) => (s || '').replace(/\s+/g, ' ').trim()
     return out
   })
 
-  await page.goto(url('index.html'), {waitUntil: 'load'})
+  await page.goto(url('tools/sanity/legacy-html/index.html'), {waitUntil: 'load'})
   await page.waitForTimeout(500)
   data.testimonials = await page.$$eval('.quote-card', (cards) =>
     cards.map((c) => ({
@@ -91,7 +91,7 @@ const clean = (s) => (s || '').replace(/\s+/g, ' ').trim()
     quote: document.querySelector('#katja, section')?.textContent ? '' : '',
   }))
 
-  await page.goto(url('events.html'), {waitUntil: 'load'})
+  await page.goto(url('tools/sanity/legacy-html/events.html'), {waitUntil: 'load'})
   await page.waitForTimeout(500)
   data.events = await page.evaluate(() => {
     const readSection = (sel) => {
@@ -130,7 +130,7 @@ const clean = (s) => (s || '').replace(/\s+/g, ' ').trim()
     }
   })
 
-  await page.goto(url('ueber-uns.html'), {waitUntil: 'load'})
+  await page.goto(url('tools/sanity/legacy-html/ueber-uns.html'), {waitUntil: 'load'})
   await page.waitForTimeout(500)
   data.about = await page.evaluate(() => ({
     title: document.querySelector('.page-head h1')?.textContent.trim() || '',
@@ -148,7 +148,7 @@ const clean = (s) => (s || '').replace(/\s+/g, ' ').trim()
     })),
   }))
 
-  await page.goto(url('hero4hair.html'), {waitUntil: 'load'})
+  await page.goto(url('tools/sanity/legacy-html/hero4hair.html'), {waitUntil: 'load'})
   await page.waitForTimeout(400)
   data.hair = await page.evaluate(() => ({
     title: document.querySelector('.page-head h1')?.textContent.trim() || '',
@@ -157,7 +157,7 @@ const clean = (s) => (s || '').replace(/\s+/g, ' ').trim()
     prices: [...document.querySelectorAll('.info-box .paw-list li')].map((li) => li.textContent.trim()),
   }))
 
-  await page.goto(url('kontakt.html'), {waitUntil: 'load'})
+  await page.goto(url('tools/sanity/legacy-html/kontakt.html'), {waitUntil: 'load'})
   await page.waitForTimeout(400)
   data.contact = await page.evaluate(() => ({
     title: document.querySelector('.page-head h1')?.textContent.trim() || '',
@@ -166,7 +166,7 @@ const clean = (s) => (s || '').replace(/\s+/g, ' ').trim()
     formNote: document.querySelector('#anfahrt .small.muted')?.textContent.trim() || '',
   }))
 
-  await page.goto(url('datenschutz.html'), {waitUntil: 'load'})
+  await page.goto(url('tools/sanity/legacy-html/datenschutz.html'), {waitUntil: 'load'})
   await page.waitForTimeout(300)
   data.legal = await page.evaluate(() => ({
     taxNote: document.body.innerText.match(/Als Kleinunternehmerin[^\n]*/)?.[0] || '',
